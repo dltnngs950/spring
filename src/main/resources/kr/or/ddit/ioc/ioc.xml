@@ -34,7 +34,6 @@
    </bean>
    
    
-   
    <!-- 생성자 주입 -->
    <bean id="userServiceCons" class="kr.or.ddit.user.service.UserServiceImpl">
    		<constructor-arg ref="userDao" />
