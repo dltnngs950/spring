@@ -52,7 +52,7 @@ public class IocJavaConfigTest {
 	@Test
 	public void beanScopeTest() {
 		// 디자인 패턴 개념으로 보면 두개의 객체는 한 클래스로부터 나왔으므로 동일 해야한다
-		assertEquals(userService, userServiceCons);
+		assertNotEquals(userService, userServiceCons);
 
 	}
 	
@@ -79,7 +79,6 @@ public class IocJavaConfigTest {
 		assertEquals("java", dbConfig.getPassword());
 		assertEquals("jdbc:oracle:thin:@localhost:1521:xe", dbConfig.getUrl());
 		assertEquals("oracle.jdbc.driver.OracleDriver", dbConfig.getDriverClassName());
-		
 		
 	}
 
