@@ -17,6 +17,9 @@ import kr.or.ddit.user.service.UserService;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class IocTest {
 
+	// @AutoWired(name="userService")
+	// *****************************
+	
 	@Resource(name="userServiceCons")
 	private UserService userServiceCons;
 	

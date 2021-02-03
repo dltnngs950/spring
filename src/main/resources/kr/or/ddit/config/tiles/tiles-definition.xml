@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+  <definition name="basic.layout" template="/WEB-INF/views/common/layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+    <put-attribute name="left" value="/WEB-INF/views/common/left.jsp" />
+    <put-attribute name="body" value="" />
+  </definition>
+  
+  	<!-- 두가지 방법이 있다.
+  	     아래 방법은 *를주고 앞에 tiles만 있으면 이 데피니션을 적용시키겠다 ..! 
+  	     {1} {2} 는 *의 순서 에 따라 들어감. -->
+  <definition name="tiles.*.*" extends="basic.layout">
+  	<put-attribute name="body" value="/WEB-INF/views/{1}/{2}Body.jsp" />
+  </definition> 
+
+<!--   <definition name="tiles.user.pagingUser" extends="basic.loyout"> -->
+<!--   	<put-attribute name="body" value="/WEB-INF/views/user/pagingUserBody.jsp" /> -->
+<!--   </definition>  이런 방법도 있다 ..! -->
+  
+</tiles-definitions>

@@ -16,7 +16,7 @@ new ??
 								즉 스프링 컨테이너에서 관리가 되는 객체여야 한다
 			ex: userService객체에 userDao 스프링 빈을 (DI)주입 하ㅇ려면 usersService 객체도 스프링 빈 이여야 한다
 			
-			userService 객체가 스프링 빈이 아니지만 스프링 컨테이너(applicationContext)객체를 참조 하고ㅠ있으면
+			userService 객체가 스프링 빈이 아니지만 스프링 컨테이너(applicationContext)객체를 참조 하고 있으면
 			DL은 가능하다
 			
 DI(주입) 방식 
@@ -27,7 +27,7 @@ DI(주입) 방식
 scope : bean의 속성, singleton(default), prototype이 존재
 
 디자인 패턴 - singleton : 특정 클래스의 인스턴스가 메모리상에서 하나만 존재하도록 하는 패턴
-스프링 singleton : id당 하나의객체를 만든다, bean 엘레멘트를 선언시 ㅈ중복된 class를 사용 가능
+스프링 singleton : id당 하나의객체를 만든다, bean 엘레멘트를 선언시 중복된 class를 사용 가능
 동일한 클래스의 객체가 스프링 컨테이너 상에서는 여러개 존재하는 것이 가능하다
 스프링 컨테이너 에서 빈의 식별 단위는 id
 
@@ -35,11 +35,11 @@ ref, value-ref : 스프링빈을 주입할 때 사용하는 속성
 				 해당 속성에 들어오는 문자열은 스프링 빈의 이름(id)이어야 한다
 				 
 
-bean 엘레멘틀 대체할 수 있는 방법
+bean element를 대체할 수 있는 방법
 기존 : 스프링 빈을 하나씩 선언
 			<bean ..... * 선언 하려고 하는 갯수 만큼
 개선 : component-scan 이용 
-	웹에서 자주 사용하는 모듈 ( 레이얼 )- controller, service, repository(dao)
+	웹에서 자주 사용하는 모듈 ( 레이어 layer )- controller, service, repository(dao)
 	1. 구현 클래스에 어노테이션을 적용 (@controller, @service, @repository)
 	2. component-scan 엘레멘트를 xml에 선언
 		==> 특정 패키지 밑에 등록된 클래스를 스캔하면서
