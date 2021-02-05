@@ -10,7 +10,7 @@
 	<!-- 자식 컨테이너 : DispatcherService에 의해 생성 
 					controller와 관련된 스프링 빈을 등록
 					
-					namespace에서 context를 체크하면 component-scan 이라는 태그 생성가능
+					nameSpace에서 context를 체크하면 component-scan 이라는 태그 생성가능
 	-->
 	
 	<!-- kr.or.ddit라고만 하면 그 밑에 하위 어노테이션이모두 검색된다.

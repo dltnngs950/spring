@@ -14,7 +14,7 @@
    <!-- userDao 스프링 빈 선언 
       UserDaoImpl userDao = new UserDaoImpl();   
    -->
-   <bean id="userDao" class="kr.or.ddit.user.repository.UserDaoImpl"/>
+<!--    <bean id="userDao" class="kr.or.ddit.user.repository.UserDaoImpl"/> -->
    
      <!-- userService 스프링 빈 선언 
       UserService.getUser("brown") = new UserServiceImpl(); 
@@ -29,9 +29,9 @@
       userService.getUser(userDao)
    -->
 
-   <bean id="userService" class="kr.or.ddit.user.service.UserServiceImpl">
-   	<property name="userDao" ref="userDao"/>
-   </bean>
+<!--    <bean id="userService" class="kr.or.ddit.user.service.UserServiceImpl"> -->
+<!--    	<property name="userDao" ref="userDao"/> -->
+<!--    </bean> -->
    
    
    <!-- 생성자 주입 -->
@@ -84,7 +84,6 @@
    		property-placholer의 system-properties-mode 속성을 'never'로 설정한 경우
    		system property는 로딩하지 않고 location에 지정한 파일에서만 속성을 로딩한다
    		-->
-   
    
    <context:property-placeholder location="classpath:/kr/or/ddit/config/db/dbinfo.properties"/>
    

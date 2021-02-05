@@ -25,8 +25,6 @@ public class LoginController {
 	@RequestMapping("views")
 	public String view() {
 		
-		logger.debug("loginController.view()");
-		
 		return "login";
 	}
 	

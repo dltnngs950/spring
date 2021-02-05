@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
     
 <!-- Bootstrap core CSS -->
-    <link href="${cp}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     
 	<script src="Https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
-	<link href="${cp}/css/bootstrap.css" rel="stylesheet">
+	<link href="../css/bootstrap.css" rel="stylesheet">

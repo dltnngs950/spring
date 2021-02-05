@@ -339,6 +339,62 @@ public class UserController {
 			e.printStackTrace();
 		}
 	}
+	
+	@RequestMapping("pagingUserAjaxView")
+	public String pagingUserAjaxView() {
+		
+		return "tiles.user.pagingUserAjax";	
+	}
+
+	@RequestMapping("pagingUserAjax")
+	public String pagingUserAjax(@RequestParam(defaultValue = "1") int page, 
+									 @RequestParam(defaultValue = "5") int pageSize,
+									 Model model) {
+		logger.debug("pagingUserAjax =============================");
+		logger.debug("page : {}, pageSize : {}", page, pageSize);
+		
+		PageVo pageVo = new PageVo(page, pageSize);
+		
+		Map<String, Object> map = userService.selectPagingUser(pageVo);
+		
+		int pagination = (int)map.get("pagination");
+		
+		logger.debug("userlist : {}", map.get("userlist"));
+		
+		model.addAttribute("pageVo", (PageVo)map.get("pageVo"));
+		model.addAttribute("userlist", map.get("userlist"));
+		model.addAttribute("pagination", pagination);
+		
+		return "jsonView";			
+	}
+	
+	
+	@RequestMapping("pagingUserAjaxHtml")
+	public String pagingUserAjaxHtml(@RequestParam(defaultValue = "1") int page, 
+								  @RequestParam(defaultValue = "5") int pageSize,
+								  Model model) {
+		
+		logger.debug("pagingUserAjaxHtml -------------------*-*-*----*-*-*-*--*-*-*-*-*");
+		
+		
+		logger.debug("page : {}, pageSize : {}", page, pageSize);
+		
+		PageVo pageVo = new PageVo(page, pageSize);
+		
+		Map<String, Object> map = userService.selectPagingUser(pageVo);
+		
+		int pagination = (int)map.get("pagination");
+		
+		model.addAttribute("pageVo", (PageVo)map.get("pageVo"));
+		model.addAttribute("userlist", map.get("userlist"));
+		model.addAttribute("pagination", pagination);
+
+		// tiles-definition에 설정한 name
+		return "user/pagingUserAjaxHtml";
+		
+	}
+	
+	
 		
 }
 

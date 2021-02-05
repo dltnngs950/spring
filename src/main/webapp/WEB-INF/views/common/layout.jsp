@@ -23,7 +23,7 @@
 
 <%@include file="../common/common_lib.jsp" %>
 
-<link href="bootstrap.css" rel="stylesheet">
+<link href="../css/bootstrap.css" rel="stylesheet">
 <script src="${cp }/js/bootstrap.js"></script>
 
 <link href="${cp }/css/dashboard.css" rel="stylesheet">

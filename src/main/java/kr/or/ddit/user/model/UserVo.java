@@ -1,5 +1,6 @@
 package kr.or.ddit.user.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.validation.constraints.Size;
@@ -27,6 +28,16 @@ public class UserVo {
 	@DateTimeFormat(pattern="MM-dd-yyyy")
 	private Date hire_dt;
 	
+	private String reg_dt_fmt;
+	
+	public String getReg_dt_fmt() {
+		return new SimpleDateFormat("yyyy-MM-dd").format(reg_dt);
+	}
+
+	public void setReg_dt_fmt(String reg_dt_fmt) {
+		this.reg_dt_fmt = reg_dt_fmt;
+	}
+
 	// 1,000
 	@NumberFormat(pattern="#,###")
 	private int price;
