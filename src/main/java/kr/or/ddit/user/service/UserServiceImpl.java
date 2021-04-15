@@ -24,6 +24,8 @@ public class UserServiceImpl implements UserService{
 		this.userDao = userDao;
 	}
 	
+	
+	
 	@Override
 	public UserVo selectUser(String userid) {
 		return userDao.selectUser(userid);

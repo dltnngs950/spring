@@ -24,11 +24,11 @@ public class FileDownloadController {
 
 	@RequestMapping("/fileDownloadView")
 	public String fileDownloadView(String userid, Model model) {
-		// 1. ´Ù¿î·Îµå ÆÄÀÏÀÇ °æ·Î => realfilename
-		// 2. ´Ù¿î·Îµå½Ã º¸¿©ÁÙ ÆÄÀÏ¸í => filename
-		// 1¹ø°ú 2¹øÀ» ´õÇÏ¿© model¿¡ ±â¼ú
-		// useridÆÄ¶ó¹ÌÅÍ¸¦ º¸³½´Ù°í °¡Á¤ 
-		// ÆÄ¶ó¹ÌÅÍ¸¦ ÀÌ¿ëÇØ¼­ ÇØ´ç »ç¿ëÀÚÀÇ »çÁøÁ¤º¸ (real filename, filename)¸¦ Á¶È¸ÇÏ¿© Ã³¸®
+		// 1. ë‹¤ìš´ë¡œë“œ íŒŒì¼ì˜ ê²½ë¡œ => realfilename
+		// 2. ë‹¤ìš´ë¡œë“œì‹œ ë³´ì—¬ì¤„ íŒŒì¼ëª… => filename
+		// 1ë²ˆê³¼ 2ë²ˆì„ ë”í•˜ì—¬ modelì— ê¸°ìˆ 
+		// useridíŒŒë¼ë¯¸í„°ë¥¼ ë³´ë‚¸ë‹¤ê³  ê°€ì • 
+		// íŒŒë¼ë¯¸í„°ë¥¼ ì´ìš©í•´ì„œ í•´ë‹¹ ì‚¬ìš©ìì˜ ì‚¬ì§„ì •ë³´ (real filename, filename)ë¥¼ ì¡°íšŒí•˜ì—¬ ì²˜ë¦¬
 		
 		UserVo userVo = userService.selectUser(userid);
 		

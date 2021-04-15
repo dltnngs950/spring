@@ -17,10 +17,10 @@ public class UserVoValidator implements Validator{
 	public void validate(Object target, Errors errors) {
 		UserVo userVo = (UserVo)target;
 				
-		// °ËÁõ ·ÎÁ÷À» ±â¼ú
-		// ¿¡·¯·Î ÆÇ´ÜµÈ´Â »óÈ²À» Ã¼Å©ÇÏ¿© errors¿¡ Ãß°¡ 
+		// ê²€ì¦ ë¡œì§ì„ ê¸°ìˆ 
+		// ì—ëŸ¬ë¡œ íŒë‹¨ëœëŠ” ìƒí™©ì„ ì²´í¬í•˜ì—¬ errorsì— ì¶”ê°€ 
 		
-		// userid ±æÀÌ°¡ 5±ÛÀÚ ÀÌ»ó ( 5±ÛÀÚ Çã¿ë )
+		// userid ê¸¸ì´ê°€ 5ê¸€ì ì´ìƒ ( 5ê¸€ì í—ˆìš© )
 		if(userVo.getUserid().length() < 5) {
 			errors.rejectValue("userid", "length");
 		}

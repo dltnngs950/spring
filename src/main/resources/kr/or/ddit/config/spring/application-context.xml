@@ -41,11 +41,14 @@
 		</property>
 	</bean>
 			
+
 	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<property name="order" value="1" />
 	</bean>
 	
+	<!-- json 형식 지원하는 리졸버 -->
 	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+	<!-- bean 등록 -->
 	<bean id="fd" class="kr.or.ddit.view.FileDownloadView"/>
 	<bean id="userExcelDownloadView" class="kr.or.ddit.view.ExcelDownloadView" />
 	
@@ -63,26 +66,12 @@
 	
 	<!-- 스프링이 처리하지 못하는 요청에 대해
 		서버에 설정이 되어있는 default 서블릿으로 요청을 위임 -->
-		<mvc:default-servlet-handler/>
+	<mvc:default-servlet-handler/>
 		
 	
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
 
 </beans>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

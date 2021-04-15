@@ -7,25 +7,25 @@ import kr.or.ddit.user.model.UserVo;
 
 public interface UserDao {
 
-	// »ç¿ëÀÚ Á¶È¸
+	// ì‚¬ìš©ì ì¡°íšŒ
 	UserVo selectUser(String userid);
 	
-	// ÀüÃ¼ »ç¿ëÀÚ Á¶È¸
+	// ì „ì²´ ì‚¬ìš©ì ì¡°íšŒ
 	List<UserVo> selectAllUser();
 	
-	// ÆäÀÌÂ¡ Á¶È¸
+	// í˜ì´ì§• ì¡°íšŒ
 	List<UserVo> selectPagingUser(PageVo pageVo);
 	
-	// »ç¿ëÀÚ Ä«¿îÆ®
+	// ì‚¬ìš©ì ì¹´ìš´íŠ¸
 	int selectAllUserCnt();
 	
-	// »ç¿ëÀÚ µî·Ï
+	// ì‚¬ìš©ì ë“±ë¡
 	int registUser(UserVo userVo);
 	
-	// »ç¿ëÀÚ ¼öÁ¤
+	// ì‚¬ìš©ì ìˆ˜ì •
 	int modifyUser(UserVo userVo);
 	
-	// »ç¿ëÀÚ »èÁ¦
+	// ì‚¬ìš©ì ì‚­ì œ
 	int deleteUser(String userid);
 	
 	

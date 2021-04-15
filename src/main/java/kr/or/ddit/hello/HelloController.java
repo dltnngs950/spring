@@ -44,8 +44,8 @@ public class HelloController {
 		return list;
 	}
 	
-	// localhost/hello/view ==> Å¬·¡½º ¾î³ëÅ×ÀÌ¼ÇÀ» ¾ø¾Ù°æ¿ì -> 
-	// localhost/view -> À¯ÁöÇÏ°í½ÍÀ¸¸é hello/view·Î ¸ÅÇÎ
+	// localhost/hello/view ==> í´ëž˜ìŠ¤ ì–´ë…¸í…Œì´ì…˜ì„ ì—†ì•¨ê²½ìš° -> 
+	// localhost/view -> ìœ ì§€í•˜ê³ ì‹¶ìœ¼ë©´ hello/viewë¡œ ë§¤í•‘
 	@RequestMapping("view")
 	public String view(Model model,
 			@ModelAttribute(name="rangers") List<String> rangers,
@@ -68,7 +68,7 @@ public class HelloController {
 	public String pathVariable(@PathVariable("subpath") String subpath, Model model,
 			@RequestHeader(name = "User-Agent") String userAgent) {
 		
-		// User-Agent °ª ·Î°Å·Î Ãâ·Â
+		// User-Agent ê°’ ë¡œê±°ë¡œ ì¶œë ¥
 		logger.debug("userAgent : {}", userAgent);
 		
 		model.addAttribute("subpath", subpath);

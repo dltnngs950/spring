@@ -1,6 +1,5 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="kr.or.ddit.user.model.UserVo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -77,13 +76,6 @@
 					<th>등록일시</th>
 				</tr>
 			
-			<%
-				List<UserVo> userList = (List<UserVo>)request.getAttribute("userList");
-			
-// 				for(int i =0; i < userList.size(); i++){
-					
-// 					UserVo user = userList.get(i);
-			%>
 			<c:forEach items="${userList }" var="user">
 				<tr>
 					<td>${user.userid }</td>

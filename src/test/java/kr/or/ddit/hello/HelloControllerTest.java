@@ -19,14 +19,14 @@ import kr.or.ddit.user.model.UserVo;
 
 //@ContextConfiguration(locations = {"classpath:/kr/or/ddit/config/spring/application-context.xml",
 //							"classpath:/kr/or/ddit/config/spring/root.context.xml"})
-//@WebAppConfiguration	// ½ºÇÁ¸µ È¯°æÀ» Web ±â¹İÀÇ application Context·Î »ı¼º
+//@WebAppConfiguration	// ìŠ¤í”„ë§ í™˜ê²½ì„ Web ê¸°ë°˜ì˜ application Contextë¡œ ìƒì„±
 //@RunWith(SpringJUnit4ClassRunner.class)
 public class HelloControllerTest extends WebTestConfig{
 	
-	// ½ºÇÁ¸µ ºó Áß¿¡ ´ëÀÔ °¡´ÉÇÑ Å¸ÀÔÀÇ ½ºÇÁ¸µ ºóÀ» ÁÖÀÔÇÑ´Ù
-	// ¸¸¾à µ¿ÀÏÇÑ Å¸ÀÔÀÇ ½ºÇÁ¸® ºóÀÌ ¿­°³ ÀÖÀ»°æ¿ì @Quilfier ¾î³ëÅ×ÀÌ¼ÇÀ» ÅëÇØ
-	// Æ¯Á¤ ½ºÇÁÀÌ ºóÀÇ ÀÌ¸§À» ÁöÄªÇÒ ¼ö ÀÖ´Ù
-	// ==> Resource ¾î³ëÅ×ÀÌ¼Ç ÇÏ³ª¸¦ »ç¿ë ÇßÀ» ¶§¿Í µ¿ÀÏÇÏ´Ù
+	// ìŠ¤í”„ë§ ë¹ˆ ì¤‘ì— ëŒ€ì… ê°€ëŠ¥í•œ íƒ€ì…ì˜ ìŠ¤í”„ë§ ë¹ˆì„ ì£¼ì…í•œë‹¤
+	// ë§Œì•½ ë™ì¼í•œ íƒ€ì…ì˜ ìŠ¤í”„ë¦¬ ë¹ˆì´ ì—´ê°œ ìˆì„ê²½ìš° @Quilfier ì–´ë…¸í…Œì´ì…˜ì„ í†µí•´
+	// íŠ¹ì • ìŠ¤í”„ì´ ë¹ˆì˜ ì´ë¦„ì„ ì§€ì¹­í•  ìˆ˜ ìˆë‹¤
+	// ==> Resource ì–´ë…¸í…Œì´ì…˜ í•˜ë‚˜ë¥¼ ì‚¬ìš© í–ˆì„ ë•Œì™€ ë™ì¼í•˜ë‹¤
 	private HelloController helloController;
 	
 	// localhost/hello/view

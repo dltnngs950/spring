@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
@@ -90,7 +91,7 @@ public class UserController {
 		model.addAttribute("userlist", map.get("userlist"));
 		model.addAttribute("pagination", pagination);
 
-		// tiles-definition¿¡ ¼³Á¤ÇÑ name
+		// tiles-definitionì— ì„¤ì •í•œ name
 		return "tiles.user.pagingUser";
 		
 	}
@@ -173,7 +174,7 @@ public class UserController {
 		return "user/registUser";
 	}
 	
-	// BindingResult °´Ã¼´Â command °´Ã¼ ¹Ù·Î µÚ¿¡ ÀÎÀÚ·Î ±â¼úÇØ¾ß ÇÑ´Ù
+	// BindingResult ê°ì²´ëŠ” command ê°ì²´ ë°”ë¡œ ë’¤ì— ì¸ìë¡œ ê¸°ìˆ í•´ì•¼ í•œë‹¤
 	@RequestMapping(path="registUser", method = RequestMethod.POST)
 	public String registUser(@Valid UserVo userVo, BindingResult result, Model model, MultipartFile profile) {
 		
@@ -189,11 +190,15 @@ public class UserController {
 		String fileroute = "";
 			
 		try {
+			
+			
 			profile.transferTo(
 		    new File("D:\\A_TeachingMaterial\\6.JspSpring\\workspace\\spring\\src\\main\\webapp\\WEB-INF\\views\\profile/"
 			+ profile.getOriginalFilename()));
 			
-			fileroute = "D:\\A_TeachingMaterial\\6.JspSpring\\workspace\\spring\\src\\main\\webapp\\WEB-INF\\views\\profile/";
+			String real = UUID.randomUUID().toString() + "." + profile.getOriginalFilename().substring(profile.getOriginalFilename().lastIndexOf(".") + 1);
+			
+			fileroute = "D:\\A_TeachingMaterial\\6.JspSpring\\workspace\\spring\\src\\main\\webapp\\WEB-INF\\views\\profile/" + real;
 			
 			userVo.setFilename(profile.getOriginalFilename());
 			userVo.setRealfilename(fileroute);
@@ -246,9 +251,9 @@ public class UserController {
 	public String excelDownload(Model model) {
 		
 		List<String> header = new ArrayList<>();
-		header.add("»ç¿ëÀÚ ¾ÆÀÌµğ");
-		header.add("»ç¿ëÀÚ ÀÌ¸§");
-		header.add("»ç¿ëÀÚ ¹ú¸í");
+		header.add("ì‚¬ìš©ì ì•„ì´ë””");
+		header.add("ì‚¬ìš©ì ì´ë¦„");
+		header.add("ì‚¬ìš©ì ë²Œëª…");
 		
 		model.addAttribute("header", header);
 		model.addAttribute("data", userService.selectAllUser());
@@ -261,9 +266,9 @@ public class UserController {
 	public void profile(HttpServletResponse response, String userid, HttpServletRequest req) {
 		response.setContentType("image");
 		
-		// useridÆÄ¶ó¹ÌÅÍ¸¦ ÀÌ¿ëÇÏ¿©
-		// usersetvice °´Ã¼¸¦ ÅëÇØ »ç¿ëÀÚÀÇ »çÁø ÆÄÀÏ ÀÌ¸§À» È¹µæ
-		// ÆÄÀÏ ÀÔÃâ·ÂÀ» ÅëÇØ »çÁøÀ» ÀĞ¾îµé¿© response°´Ã¼ÀÇ outputStreamÀ¸·Î ÀÀ´ä »ı¼º
+		// useridíŒŒë¼ë¯¸í„°ë¥¼ ì´ìš©í•˜ì—¬
+		// usersetvice ê°ì²´ë¥¼ í†µí•´ ì‚¬ìš©ìì˜ ì‚¬ì§„ íŒŒì¼ ì´ë¦„ì„ íšë“
+		// íŒŒì¼ ì…ì¶œë ¥ì„ í†µí•´ ì‚¬ì§„ì„ ì½ì–´ë“¤ì—¬ responseê°ì²´ì˜ outputStreamìœ¼ë¡œ ì‘ë‹µ ìƒì„±
 		
 		UserVo userVo = userService.selectUser(userid);
 
@@ -316,9 +321,9 @@ public class UserController {
 		
 		resp.setHeader("Content-Disposition", "attachment; filename=" + filename);
 		
-		// userid ÆÄ¶ó¹ÌÅÍ¸¦ ÀÌ¿ëÇÏ¿©
-		// userService °´Ã¼¸¦ ÅëÇØ »ç¿ëÀÚÀÇ »çÁø ÆÄÀÏ ÀÌ¸§À» È¹µæ
-		// ÆÄÀÏ ÀÔÃâ·ÂÀ» ÅëÇØ »çÁøÀ» ÀĞ¾îµé¿© resp°´Ã¼ÀÇ outputStreamÀ¸·Î ÀÀ´ä »ı¼º
+		// userid íŒŒë¼ë¯¸í„°ë¥¼ ì´ìš©í•˜ì—¬
+		// userService ê°ì²´ë¥¼ í†µí•´ ì‚¬ìš©ìì˜ ì‚¬ì§„ íŒŒì¼ ì´ë¦„ì„ íšë“
+		// íŒŒì¼ ì…ì¶œë ¥ì„ í†µí•´ ì‚¬ì§„ì„ ì½ì–´ë“¤ì—¬ respê°ì²´ì˜ outputStreamìœ¼ë¡œ ì‘ë‹µ ìƒì„±
 		
 		logger.debug("path : {} ", path);
 		
@@ -389,7 +394,7 @@ public class UserController {
 		model.addAttribute("userlist", map.get("userlist"));
 		model.addAttribute("pagination", pagination);
 
-		// tiles-definition¿¡ ¼³Á¤ÇÑ name
+		// tiles-definitionì— ì„¤ì •í•œ name
 		return "user/pagingUserAjaxHtml";
 		
 	}

@@ -10,7 +10,7 @@ public class SessionCheckInterceptor extends HandlerInterceptorAdapter{
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		// Á¤»ó Á¢¼ÓÀÎÁö È®ÀÎÇÏ´Â ·ÎÁ÷ : session¿¡ S_User ¼Ó¼ºÀÌ ÀÖ´ÂÁö °Ë»ç
+		// ì •ìƒ ì ‘ì†ì¸ì§€ í™•ì¸í•˜ëŠ” ë¡œì§ : sessionì— S_User ì†ì„±ì´ ìˆëŠ”ì§€ ê²€ì‚¬
 		if(request.getSession().getAttribute("S_USER") == null) {
 			response.sendRedirect("/login/views");
 			return false;

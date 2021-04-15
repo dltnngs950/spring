@@ -10,7 +10,7 @@ import org.springframework.format.annotation.NumberFormat;
 
 
 public class UserVo {
-	// ¾î³ëÅ×ÀÌ¼Ç == errorcode
+	// ï¿½ë¼±ï¿½ë‚ï¿½ë€’ï¿½ì” ï¿½ë€¡ == errorcode
 	@Size(min=5)
 	private String userid;
 	
@@ -42,13 +42,21 @@ public class UserVo {
 	@NumberFormat(pattern="#,###")
 	private int price;
 
-
 	public UserVo () {}
 
-	public UserVo(String userid, String usernm, String pass) {
-		setUserid(userid);
-		setUsernm(usernm);
-		setPass(pass);
+	public UserVo(String userid, String usernm, String pass, String alias, String addr1, String addr2,
+			String zipcode, String filename, String realfilename, Date hire_dt, int price) {
+		this.userid = userid;
+		this.usernm = usernm;
+		this.pass = pass;
+		this.alias = alias;
+		this.addr1 = addr1;
+		this.addr2 = addr2;
+		this.zipcode = zipcode;
+		this.filename = filename;
+		this.realfilename = realfilename;
+		this.hire_dt = hire_dt;
+		this.price = price;
 	}
 
 	public String getUserid() {

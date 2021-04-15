@@ -28,7 +28,22 @@ public class UserServiceTest extends ModelTestConfig{
 		/***When***/
 		UserVo userVo = userService.selectUser(userid);
 		/***Then***/
-		assertEquals("ºê¶ó¿î", userVo.getUsernm());
+		assertEquals("ë¸Œë¼ìš´", userVo.getUsernm());
 	}
+	
+	@Test
+	public void registUser() {
+		/***Given***/
+		UserVo userVo = new UserVo();
+
+		/***When***/
+		int registCnt = userService.registUser(userVo);
+		/***Then***/
+		
+		
+		
+	}
+	
+	
 
 }

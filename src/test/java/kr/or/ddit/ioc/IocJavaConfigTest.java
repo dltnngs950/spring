@@ -38,7 +38,7 @@ public class IocJavaConfigTest {
 	private DbConfig dbConfig;
 	
 	
-	// userServiceCon ½ºÇÁ¸µ ºóÀÌ Á¤»èÀûÀ¸·Î »ı¼º µÇ¾ú´ÂÁö Å×½ºÆ®
+	// userServiceCon ìŠ¤í”„ë§ ë¹ˆì´ ì •ì‚­ì ìœ¼ë¡œ ìƒì„± ë˜ì—ˆëŠ”ì§€ í…ŒìŠ¤íŠ¸
 	@Test
 	public void userServiceConsTest() {
 		/***Given***/
@@ -52,7 +52,7 @@ public class IocJavaConfigTest {
 	
 	@Test
 	public void beanScopeTest() {
-		// µğÀÚÀÎ ÆĞÅÏ °³³äÀ¸·Î º¸¸é µÎ°³ÀÇ °´Ã¼´Â ÇÑ Å¬·¡½º·ÎºÎÅÍ ³ª¿ÔÀ¸¹Ç·Î µ¿ÀÏ ÇØ¾ßÇÑ´Ù
+		// ë””ìì¸ íŒ¨í„´ ê°œë…ìœ¼ë¡œ ë³´ë©´ ë‘ê°œì˜ ê°ì²´ëŠ” í•œ í´ë˜ìŠ¤ë¡œë¶€í„° ë‚˜ì™”ìœ¼ë¯€ë¡œ ë™ì¼ í•´ì•¼í•œë‹¤
 		assertNotEquals(userService, userServiceCons);
 
 	}
@@ -60,7 +60,7 @@ public class IocJavaConfigTest {
 	@Test
 	public void beanScopeTest2() {
 
-		// µğÀÚÀÎ ÆĞÅÏ °³³äÀ¸·Î º¸¸é µÎ°³ÀÇ °´Ã¼´Â ÇÑ Å¬·¡½º·ÎºÎÅÍ ³ª¿ÔÀ¸¹Ç·Î µ¿ÀÏ ÇØ¾ßÇÑ´Ù
+		// ë””ìì¸ íŒ¨í„´ ê°œë…ìœ¼ë¡œ ë³´ë©´ ë‘ê°œì˜ ê°ì²´ëŠ” í•œ í´ë˜ìŠ¤ë¡œë¶€í„° ë‚˜ì™”ìœ¼ë¯€ë¡œ ë™ì¼ í•´ì•¼í•œë‹¤
 		assertEquals(userService, userService2);
 		
 	}
@@ -68,7 +68,7 @@ public class IocJavaConfigTest {
 	@Test
 	public void beanScopePrototypeTest() {
 
-		// µ¿ÀÏÇÑ userServicePrototype ºóÀ» ÁÖÀÔ ( scope : prototype )
+		// ë™ì¼í•œ userServicePrototype ë¹ˆì„ ì£¼ì… ( scope : prototype )
 		assertNotEquals(userServicePrototype, userServicePrototype2);
 		
 	}

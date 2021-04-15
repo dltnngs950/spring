@@ -15,12 +15,12 @@ public class IocMain {
 
 
 	public static void main(String[] args) {
-		// 1. ╫╨га╦╣ ╪Ёа╓ фдюою╩ юл©Кго©╘ ╫╨га╦╣ даевюлЁй╦╕ ╩Щ╪╨(kr/or/ddit/ioc/ioc.xml)
-		// 		╫╨га╦╣ даевюлЁй е╦ют : ApplicationContext
-		// 2. ╫╨га╦╣ даевюлЁй©║╟т ╦╦╣И╬НаЬ ╫╨га╦╣ ╨С(╟╢ц╪)╦╕ ©Дц╩
-		// 		DL(Dependency Lookup) : ╫╨га╦╣ даевюлЁй©║╟т ╫╨га╦╣ ╨Сю╩ ©Дц╩го╢б ╟За╓
+		// 1. Л┼╓М■└К╖│ Л└╓Л═∙ М▄▄Л²╪Л²└ Л²╢Л ╘М∙≤Л≈╛ Л┼╓М■└К╖│ Л╩╗М┘▄Л²╢К└┬К╔╪ Л┐²Л└╠(kr/or/ddit/ioc/ioc.xml)
+		// 		Л┼╓М■└К╖│ Л╩╗М┘▄Л²╢К└┬ М┐─Л·┘ : ApplicationContext
+		// 2. Л┼╓М■└К╖│ Л╩╗М┘▄Л²╢К└┬Л≈░Й╡▄ К╖▄К⌠╓Л√╢Л╖└ Л┼╓М■└К╖│ К╧┬(Й╟²Л╡╢)К╔╪ Л ■Л╡╜
+		// 		DL(Dependency Lookup) : Л┼╓М■└К╖│ Л╩╗М┘▄Л²╢К└┬Л≈░Й╡▄ Л┼╓М■└К╖│ К╧┬Л²└ Л ■Л╡╜М∙≤К┼■ ЙЁ╪Л═∙
 		// 		
-		// 3. ╫╨га╦╣ даевюлЁй©║╪╜ ╟Э╦╝╣г╟М юж╢б ╨Сюл юъ ╦╦╣И╬Н аЁ╢баЖ х╝юн
+		// 3. Л┼╓М■└К╖│ Л╩╗М┘▄Л²╢К└┬Л≈░Л└° Й╢─К╕╛К░≤ЙЁ═ Л·┬К┼■ К╧┬Л²╢ Л·≤ К╖▄К⌠╓Л√╢ Л║▄К┼■Л╖─ М≥∙Л²╦
 		
 		ApplicationContext context 
 				= new ClassPathXmlApplicationContext("classpath:/kr/or/ddit/ioc/ioc.xml");
@@ -35,8 +35,8 @@ public class IocMain {
 			logger.debug("beanName : {}", beanName);
 		}
 		
-		// ╫╨га╦╣ даевюлЁй╥н ╨нем userService ╫╨га╦╣ ╨Сю╩ DLю╩еКгь ╬Р╬Н©ю╟М
-		// getUser ╦ч╪р╣Е╦╕ call, ╧щх╞╣х ╟╙ ( UserVo)╦╕ logger╦╕ еКгь цБ╥б
+		// Л┼╓М■└К╖│ Л╩╗М┘▄Л²╢К└┬К║° К╤─М└╟ userService Л┼╓М■└К╖│ К╧┬Л²└ DLЛ²└М├╣М∙╢ Л√╩Л√╢Л≤╓ЙЁ═
+		// getUser К╘■Л├▄К⌠°К╔╪ call, К╟≤М≥≤К░° Й╟▓ ( UserVo)К╔╪ loggerК╔╪ М├╣М∙╢ Л╤°К═╔
 		
 		UserService userService = (UserService)context.getBean("userService");
 		

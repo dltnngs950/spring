@@ -16,21 +16,21 @@ public class Aspect {
 	@Pointcut("execution(* kr.or.ddit..service.*.*(..))")
 	public void dummy() {}
 	
-	// Æ¯Á¤ ¸Ş¼Òµå°¡ ½ÇÇàµÇ±âÀü¿¡ ½ÇÇà µÇ¾î¾ßÇÒ °øÅëÀÇ °ü½É»çÇ×
+	// íŠ¹ì • ë©”ì†Œë“œê°€ ì‹¤í–‰ë˜ê¸°ì „ì— ì‹¤í–‰ ë˜ì–´ì•¼í•  ê³µí†µì˜ ê´€ì‹¬ì‚¬í•­
 	@Before("dummy()")
 	public void beforeMethod(JoinPoint joinpoint) {
 		logger.debug("Aspect.beforeMethod");
 	}
 	
-	// around : Æ¯Á¤ ¸Ş¼Òµå ½ÇÇà ÀüÈÄ
-	// ¸Ş¼Òµå ½ÇÇà Àü - °øÅë °ü½É»çÇ×
-	// ¸Ş¼Òµå ¿ø·¡ ·ÎÁ÷ 
-	// ¸Ş¼Òµå ½ÇÇà ÈÄ - °øÅë °ü½É»çÇ×
+	// around : íŠ¹ì • ë©”ì†Œë“œ ì‹¤í–‰ ì „í›„
+	// ë©”ì†Œë“œ ì‹¤í–‰ ì „ - ê³µí†µ ê´€ì‹¬ì‚¬í•­
+	// ë©”ì†Œë“œ ì›ë˜ ë¡œì§ 
+	// ë©”ì†Œë“œ ì‹¤í–‰ í›„ - ê³µí†µ ê´€ì‹¬ì‚¬í•­
 	
 	@Around("dummy()")
 	public Object aroundMethod(ProceedingJoinPoint joinPoint) throws Throwable {
 		
-		// ¸Ş¼Òµå º» ·ÎÁ÷ ½ÇÇà Àü
+		// ë©”ì†Œë“œ ë³¸ ë¡œì§ ì‹¤í–‰ ì „
 		long startTime = System.nanoTime();
 		
 		String className = joinPoint.getTarget().getClass().getSimpleName();
@@ -42,7 +42,7 @@ public class Aspect {
 		
 		logger.debug("{} {} duration : {}", className, methodName, endTime-startTime);
 		
-		// ¸Ş¼Òµå º» ·ÎÁ÷ ½ÇÇà ÈÄ
+		// ë©”ì†Œë“œ ë³¸ ë¡œì§ ì‹¤í–‰ í›„
 		return ret;
 	}
 

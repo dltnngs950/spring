@@ -14,7 +14,7 @@ import org.springframework.web.context.WebApplicationContext;
 @ContextConfiguration(locations = {"classpath:/kr/or/ddit/config/spring/application-context.xml", 
 									"classpath:/kr/or/ddit/config/spring/root-context.xml",
 									"classpath:/kr/or/ddit/config/spring/datasource-context.xml"})
-@WebAppConfiguration	// ½ºÇÁ¸µ È¯°æÀ» Web ±â¹İÀÇ application Context·Î »ı¼º
+@WebAppConfiguration	// ìŠ¤í”„ë§ í™˜ê²½ì„ Web ê¸°ë°˜ì˜ application Contextë¡œ ìƒì„±
 @RunWith(SpringJUnit4ClassRunner.class)
 public class WebTestConfig {
 	
@@ -25,7 +25,7 @@ public class WebTestConfig {
 	
 	@Before
 	public void setup() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(context).build(); // MockMvc¿¡ ÇÊ¿äÇÑ °´Ã¼ »ı¼º
+		mockMvc = MockMvcBuilders.webAppContextSetup(context).build(); // MockMvcì— í•„ìš”í•œ ê°ì²´ ìƒì„±
 	}
 
 	@After
